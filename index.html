@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicy Döner Kebab Spicy Pizzeria Palamós</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="590720.png">
+    <style>
+        :root {
+            --primary-red: #d90429;
+            --dark-bg: #121212;
+            --card-grey: #1e1e1e;
+            --gold: #ffb703;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+
+        body { background-color: var(--dark-bg); color: var(--white); }
+
+        /* Navigation */
+        nav {
+            background: rgba(0,0,0,0.95);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 2000;
+            border-bottom: 3px solid var(--primary-red);
+        }
+        .logo { font-family: 'Oswald', sans-serif; color: var(--white); font-size: 1.5rem; text-decoration: none; text-transform: uppercase; }
+        .logo span { color: var(--primary-red); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-red); }
+
+        /* Hero Section b tswira dial l'ma7al */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('lol.jpg'); /* Hada link tswira dyalk */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-red);
+        }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--white); line-height: 1.1; margin-bottom: 10px; }
+        .hero h1 span { color: var(--primary-red); }
+        .hero p { font-size: 1.2rem; background: var(--primary-red); padding: 5px 20px; border-radius: 50px; font-weight: bold; }
+
+        /* Menu Section */
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section-title { text-align: center; font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--white); margin-bottom: 50px; text-transform: uppercase; }
+        .section-title span { color: var(--primary-red); }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+        .card { background: var(--card-grey); border-radius: 15px; overflow: hidden; border: 1px solid #333; transition: 0.3s; position: relative; }
+        .card:hover { transform: scale(1.03); border-color: var(--primary-red); box-shadow: 0 10px 20px rgba(217, 4, 41, 0.3); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        
+        .card-body { padding: 20px; }
+        .card-title { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 5px; }
+        .card-desc { font-size: 0.85rem; color: #ccc; margin-bottom: 15px; min-height: 40px; }
+        
+        .price-box { display: flex; justify-content: space-between; align-items: center; }
+        .price { font-size: 1.5rem; font-weight: 700; color: var(--white); }
+        
+        .order-wa { 
+            background: #25d366; color: white; padding: 10px 15px; border-radius: 8px; 
+            text-decoration: none; font-weight: bold; font-size: 0.8rem; display: flex; align-items: center; gap: 8px;
+        }
+
+        /* Floating WhatsApp Button */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 3000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        footer { background: #000; padding: 50px 5%; text-align: center; border-top: 4px solid var(--primary-red); }
+        .footer-info { margin-bottom: 20px; color: #aaa; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">SPICY <span>DÖNER KEBAB</span></a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">La Carta</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <h1>SPICY DÖNER KEBAB<br><span>SPICY PIZZERIA</span></h1>
+        <p>PALAMÓS - SERVICIO A DOMICILIO</p>
+    </section>
+
+    <div class="container" id="menu">
+        <h2 class="section-title">Nuestra <span>Carta</span></h2>
+        
+        <div class="menu-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=400" alt="Tacos">
+                <div class="card-body">
+                    <h3 class="card-title">Tacos Solo</h3>
+                    <p class="card-desc">Tortilla de trigo rellena de carne mixta y salsas Spicy.</p>
+                    <div class="price-box"><span class="price">4,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://s3-media0.fl.yelpcdn.com/bphoto/2hvum2HUYaaU1rJKaKvlhg/348s.jpg" alt="Tacos Menu">
+                <div class="card-body">
+                    <h3 class="card-title">Tacos Menú</h3>
+                    <p class="card-desc">Tacos completos con patatas fritas y bebida fría.</p>
+                    <div class="price-box"><span class="price">7,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?q=80&w=400" alt="Kebab">
+                <div class="card-body">
+                    <h3 class="card-title">Döner Kebab</h3>
+                    <p class="card-desc">Pan de pita artesanal con carne de alta calidad.</p>
+                    <div class="price-box"><span class="price">4,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=400" alt="Durum">
+                <div class="card-body">
+                    <h3 class="card-title">Hamburguesa</h3>
+                    <p class="card-desc">Hamburguesa de carne picada.</p>
+                    <div class="price-box"><span class="price">6,00 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=400" alt="Pizza">
+                <div class="card-body">
+                    <h3 class="card-title">Pizza Margarita</h3>
+                    <p class="card-desc">Tomate, mozzarella fresca y orégano.</p>
+                    <div class="price-box"><span class="price">8,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img.freepik.com/foto-gratis/pizza-suprema-tradicional-mesa-madera_123827-20134.jpg?semt=ais_hybrid&w=740&q=80" alt="Pizza">
+                <div class="card-body">
+                    <h3 class="card-title">Pizza de Atún</h3>
+                    <p class="card-desc">Mozzarella y picante y tomate y atún.</p>
+                    <div class="price-box"><span class="price">9,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?q=80&w=400" alt="Pizza">
+                <div class="card-body">
+                    <h3 class="card-title">Pizza Barbacoa</h3>
+                    <p class="card-desc">Pollo, carne picada y salsa barbacoa especial.</p>
+                    <div class="price-box"><span class="price">10,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=400" alt="Croquetas">
+                <div class="card-body">
+                    <h3 class="card-title">Croquetas de Pollo</h3>
+                    <p class="card-desc">Ración de 6 unidades crujientes de pollo.</p>
+                    <div class="price-box"><span class="price">4,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400" alt="Burger">
+                <div class="card-body">
+                    <h3 class="card-title">Hamburguesa Clásica</h3>
+                    <p class="card-desc">Carne de ternera, queso, lechuga y tomate.</p>
+                    <div class="price-box"><span class="price">5,50 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=400" alt="Pizza">
+                <div class="card-body">
+                    <h3 class="card-title">Pizza Spicy Kebab</h3>
+                    <p class="card-desc">Nuestra especialidad con carne de kebab y salsa blanca.</p>
+                    <div class="price-box"><span class="price">11,00 €</span><a href="https://wa.me/34972312386" class="order-wa"><i class="fab fa-whatsapp"></i> PEDIR</a></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.hccb.in/images/coke1.png" alt="Baklava">
+                <div class="card-body"><h3 class="card-title">Coca Cola</h3><p class="card-desc">Bebida de coca cola muy fresca.</p>
+                <div class="price-box"><span class="price">3,50 €</span><a href="#" class="order-wa">PEDIR</a></div></div>
+            </div>
+            </div>
+    </div>
+
+    <footer id="contacto">
+        <div class="footer-info">
+            <p><i class="fas fa-map-marker-alt" style="color:var(--primary-red)"></i> Carrer de la Marina, Palamós, Girona</p>
+            <p><i class="fas fa-phone" style="color:var(--primary-red)"></i> +34 972 312 386</p>
+            <p><i class="fas fa-clock" style="color:var(--primary-red)"></i> Lun - Dom: 12:00 - 00:00</p>
+        </div>
+        <p>&copy; 2026 Spicy Döner Kebab & Pizzeria Palamós</p>
+    </footer>
+
+    <a href="https://wa.me/34972312386" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
